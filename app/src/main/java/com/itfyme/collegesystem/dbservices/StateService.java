@@ -9,11 +9,11 @@ import java.util.HashMap;
 
 public class StateService {
     Context mContext;
-    private String getListByPageURL="";
+    private String getListByPageURL="state/get-list-object-page";
     private String getListURL="";
     private String getURL="";
-    private String addURL="";
-    private String updateURL="";
+    private String addURL="state/add";
+    private String updateURL="state/update";
     private String deleteURL="";
     public StateService(Context context) {
         mContext = context;

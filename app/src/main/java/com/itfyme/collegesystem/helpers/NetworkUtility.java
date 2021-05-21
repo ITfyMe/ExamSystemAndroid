@@ -6,7 +6,7 @@ import org.json.JSONObject;
 
 public class NetworkUtility {
     public static String Base_URL="http://examsystem.itfyme.com/api/main/";
-    public static String numOfRecords = "85";
+    public static String numOfRecords = "25";
 
     public static Boolean isValidJSONArr(String str) {
         try {

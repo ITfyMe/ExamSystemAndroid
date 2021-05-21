@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.itfyme.collegesystem.R;
+import com.itfyme.collegesystem.activity.BaseActivity;
 import com.itfyme.collegesystem.dbservices.StateService;
 import com.itfyme.collegesystem.helpers.NetworkUtility;
 import com.itfyme.collegesystem.interfaces.ResponseHandler;
@@ -26,7 +27,7 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 
-public class StateListActivity extends AppCompatActivity {
+public class StateListActivity extends BaseActivity {
     private JSONArray stateArr;
     private int pageNum;
     private String totalRec = "";

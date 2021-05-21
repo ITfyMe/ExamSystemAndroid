@@ -13,15 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CollegeSystem"
         android:usesCleartextTraffic="true">
+        <activity android:name=".activity.City.CityListActivity"></activity>
         <activity
-            android:label="Add State"
-            android:name=".activity.State.StateAddActivity">
-        </activity>
+            android:name=".activity.State.StateAddActivity"
+            android:label="Add State"></activity>
         <activity
-            android:label="State List"
-            android:name=".activity.State.StateListActivity">
-        </activity>
-
+            android:name=".activity.State.StateListActivity"
+            android:label="State List"></activity>
         <activity
             android:name=".activity.dashboard.DashboardActivity"
             android:label="Dashboard">

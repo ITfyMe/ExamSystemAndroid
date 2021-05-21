@@ -45,7 +45,7 @@ public class VolleyNetworkManager {
                         @Override
                         public void onErrorResponse(VolleyError volleyError) {
                             Log.d("GET Response Error  :", volleyError.toString());
-                            responseHandler.onSuccess(volleyError.toString());
+                            responseHandler.onFail(volleyError.toString());
                         }
                     }
             );
@@ -77,7 +77,7 @@ public class VolleyNetworkManager {
                         @Override
                         public void onErrorResponse(VolleyError volleyError) {
                             Log.d("POST Response Error  :", volleyError.toString());
-                            responseHandler.onSuccess(volleyError.toString());
+                            responseHandler.onFail(volleyError.toString());
                         }
                     } ){
                 @Override
