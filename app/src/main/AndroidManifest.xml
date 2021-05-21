@@ -13,15 +13,43 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CollegeSystem"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.City.CityListActivity"></activity>
+        <activity
+            android:label="Add Subject"
+            android:name=".activity.Subject.SubjectAddActivity"></activity>
+        <activity android:label="Subject List" android:name=".activity.Subject.SubjectListActivity" />
+        <activity
+            android:label="Add Student"
+            android:name=".activity.Student.StudentAddActivity" />
+        <activity android:label="Student List" android:name=".activity.Student.StudentListActivity" />
+        <activity  android:label="Add Staff"
+            android:name=".activity.Staff.StaffAddActivity" />
+        <activity  android:label="Staff List" android:name=".activity.Staff.StaffListActivity" />
+        <activity
+            android:label="Add Semester"
+            android:name=".activity.Semester.SemesterAddActivity" />
+        <activity android:label="Semester List" android:name=".activity.Semester.SemesterListActivity" />
+        <activity  android:label="Add College Branch"
+            android:name=".activity.CollegeBranch.CollegeBranchAddActivity" />
+        <activity android:label="College Branch List" android:name=".activity.CollegeBranch.CollegeBranchListActivity" />
+        <activity  android:label="Add BS Subject"
+            android:name=".activity.BSSubject.BSSubjectAddActivity" />
+        <activity  android:label="BS Subject List" android:name=".activity.BSSubject.BSSubjectListActivity" />
+        <activity  android:label="Add Branch" android:name=".activity.Branch.BranchAddActivity" />
+        <activity android:label="Branch List" android:name=".activity.Branch.BranchListActivity" />
+        <activity  android:label="Add College" android:name=".activity.College.CollegeAddActivity" />
+        <activity android:label="College List" android:name=".activity.College.CollegeListActivity" />
+        <activity  android:label="Add University" android:name=".activity.University.UniversityAddActivity" />
+        <activity android:label="University List" android:name=".activity.University.UniversityListActivity" />
+        <activity  android:label="Add City" android:name=".activity.City.CityAddActivity" />
+        <activity android:label="City List" android:name=".activity.City.CityListActivity" />
         <activity
             android:name=".activity.State.StateAddActivity"
-            android:label="Add State"></activity>
+            android:label="Add State" />
         <activity
             android:name=".activity.State.StateListActivity"
-            android:label="State List"></activity>
+            android:label="State List" />
         <activity
-            android:name=".activity.dashboard.DashboardActivity"
+            android:name=".activity.Dashboard.DashboardActivity"
             android:label="Dashboard">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
