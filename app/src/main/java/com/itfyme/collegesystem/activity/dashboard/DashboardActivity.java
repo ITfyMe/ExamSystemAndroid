@@ -10,6 +10,7 @@ import androidx.cardview.widget.CardView;
 
 import com.itfyme.collegesystem.R;
 import com.itfyme.collegesystem.activity.State.StateAddActivity;
+import com.itfyme.collegesystem.activity.State.StateListActivity;
 
 public class DashboardActivity extends AppCompatActivity {
     CardView stateCard, cityCard, univCard, collegeCard, subjectCard,
@@ -34,7 +35,7 @@ public class DashboardActivity extends AppCompatActivity {
             stateCard.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent stateIntent = new Intent(getApplicationContext(), StateAddActivity.class);
+                    Intent stateIntent = new Intent(getApplicationContext(), StateListActivity.class);
                     startActivity(stateIntent);
                 }
             });
