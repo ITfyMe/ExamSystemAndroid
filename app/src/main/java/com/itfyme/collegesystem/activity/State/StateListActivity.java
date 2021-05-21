@@ -89,7 +89,7 @@ public class StateListActivity extends AppCompatActivity {
                     try {
                         JSONObject obj = new JSONObject(data.toString());
                         JSONObject pageObj = obj.optJSONObject("pages");
-                        totalRec = pageObj.optString("total_records");
+                        totalRec = pageObj.optString("Total");
                         txtTotalRec.setText("Total Records: " + totalRec);
                         JSONArray arr = obj.optJSONArray("data");
                         stateArr = NetworkUtility.mergeArray(stateArr, arr);
@@ -175,9 +175,9 @@ public class StateListActivity extends AppCompatActivity {
             try {
                 final JSONObject obj = dataSource.optJSONObject(position);
                 final String name = obj.optString("name");
-                final String id = obj.optString("id");
+                final String code = obj.optString("code");
                 holder.stateName.setText(name);
-                holder.stateID.setText(id);
+                holder.stateCode.setText(code);
                 holder.linearLayout.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -196,28 +196,17 @@ public class StateListActivity extends AppCompatActivity {
         }
 
         private class ViewHolder extends RecyclerView.ViewHolder {
-            public TextView stateName, stateID;
+            public TextView stateName, stateCode;
             public LinearLayout linearLayout;
 
             public ViewHolder(View itemView) {
                 super(itemView);
                 this.stateName = (TextView) itemView.findViewById(R.id.txtStateName);
-                this.stateID = (TextView) itemView.findViewById(R.id.txtStateId);
+                this.stateCode = (TextView) itemView.findViewById(R.id.txtStateCode);
                 linearLayout = (LinearLayout) itemView.findViewById(R.id.mainLay);
             }
         }
     }
 
 
-
-    @Override
-    public void onBackPressed() {
-        try {
-            Intent intent = new Intent();
-            setResult(AppCompatActivity.RESULT_CANCELED, intent);
-            finish();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }

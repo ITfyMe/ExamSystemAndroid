@@ -9,7 +9,7 @@ import java.util.HashMap;
 
 public class StateService {
     Context mContext;
-    private String getListByPageURL="https://restcountries.eu/rest/v2/";
+    private String getListByPageURL="";
     private String getListURL="";
     private String getURL="";
     private String addURL="";

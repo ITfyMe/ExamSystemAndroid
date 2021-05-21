@@ -4,8 +4,10 @@ import android.content.Context;
 import android.util.Log;
 
 import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
 import com.itfyme.collegesystem.controller.AppController;
 import com.itfyme.collegesystem.helpers.NetworkUtility;
 import com.itfyme.collegesystem.helpers.QueryParamsBuilder;
@@ -14,6 +16,7 @@ import com.itfyme.collegesystem.interfaces.ResponseHandler;
 import org.json.JSONObject;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class VolleyNetworkManager {
     Context mContext;
@@ -25,10 +28,10 @@ public class VolleyNetworkManager {
     }
 
     public void getRequest(String url, HashMap<String, String> params, ResponseHandler responseHandler) {
-        String queryUrl = QueryParamsBuilder.getQueryParameters(url, params);
-        CustomJSONObjectRequest customJSONObjectRequest = null;
+        String queryUrl = NetworkUtility.Base_URL + QueryParamsBuilder.getQueryParameters(url, params);
+
         try {
-            customJSONObjectRequest = new CustomJSONObjectRequest(queryUrl,
+            StringRequest strRequest = new StringRequest(Request.Method.GET,queryUrl,
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
@@ -46,8 +49,7 @@ public class VolleyNetworkManager {
                         }
                     }
             );
-            customJSONObjectRequest.setRetryPolicy(new DefaultRetryPolicy(mVolleyTimeoutMS, mMaxRetries, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-            AppController.getInstance().addToRequestQueue(customJSONObjectRequest);
+            AppController.getInstance().addToRequestQueue(strRequest);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -56,9 +58,10 @@ public class VolleyNetworkManager {
     }
 
     public void postRequest(String url, HashMap<String, String> params, ResponseHandler responseHandler) {
-        CustomJSONObjectRequest customJSONObjectRequest = null;
+        String queryURL = NetworkUtility.Base_URL + url;
+
         try {
-            customJSONObjectRequest = new CustomJSONObjectRequest(url, params,
+            StringRequest stringRequest = new StringRequest(Request.Method.POST,queryURL,
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
@@ -76,10 +79,15 @@ public class VolleyNetworkManager {
                             Log.d("POST Response Error  :", volleyError.toString());
                             responseHandler.onSuccess(volleyError.toString());
                         }
-                    }
-            );
-            customJSONObjectRequest.setRetryPolicy(new DefaultRetryPolicy(mVolleyTimeoutMS, mMaxRetries, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-            AppController.getInstance().addToRequestQueue(customJSONObjectRequest);
+                    } ){
+                @Override
+                protected Map<String, String> getParams() {
+                    // at last we are
+                    // returning our params.
+                    return params;
+                }
+            };
+            AppController.getInstance().addToRequestQueue(stringRequest);
         } catch (Exception e) {
             e.printStackTrace();
         }

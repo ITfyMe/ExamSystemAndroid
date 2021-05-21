@@ -1,5 +1,6 @@
 package com.itfyme.collegesystem.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.itfyme.collegesystem.controller.AppController;
@@ -45,5 +46,15 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+    }
+    @Override
+    public void onBackPressed() {
+        try {
+            Intent intent = new Intent();
+            setResult(AppCompatActivity.RESULT_CANCELED, intent);
+            finish();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

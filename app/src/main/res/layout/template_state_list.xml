@@ -24,17 +24,17 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/txtStateId"
+                android:id="@+id/txtStateCode"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.1"
+                android:layout_weight="0.2"
                 android:textColor="#121e31" />
 
             <TextView
                 android:id="@+id/txtStateName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.9"
+                android:layout_weight="0.8"
                 android:textColor="#333366" />
 
 

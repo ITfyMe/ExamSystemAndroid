@@ -9,10 +9,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import com.itfyme.collegesystem.R;
+import com.itfyme.collegesystem.activity.BaseActivity;
 import com.itfyme.collegesystem.activity.State.StateAddActivity;
 import com.itfyme.collegesystem.activity.State.StateListActivity;
 
-public class DashboardActivity extends AppCompatActivity {
+public class DashboardActivity extends BaseActivity {
     CardView stateCard, cityCard, univCard, collegeCard, subjectCard,
             branchCard, clgBranchCard, semesterCard, bsSubjectCard, staffCard, studentCard;
     @Override

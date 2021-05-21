@@ -64,14 +64,5 @@ public class StateAddActivity extends BaseActivity {
 
     }
 
-    @Override
-    public void onBackPressed() {
-        try {
-            Intent intent = new Intent();
-            setResult(AppCompatActivity.RESULT_CANCELED, intent);
-            finish();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+
 }
