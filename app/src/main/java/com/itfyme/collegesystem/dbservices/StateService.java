@@ -71,9 +71,7 @@ public class StateService {
 
     }
 
-    public void getState(String id, ResponseHandler responseHandler) {
-        HashMap<String, String> params=new HashMap<>();
-        params.put("state_id",id);
+    public void getState(HashMap<String, String> params, ResponseHandler responseHandler) {
         new VolleyNetworkManager(mContext).getRequest(getURL, params, new ResponseHandler() {
             @Override
             public void onSuccess(Object data) {
