@@ -1,4 +1,4 @@
-package com.itfyme.collegesystem.activity;
+package com.itfyme.collegesystem.activity.dashboard;
 
 import android.content.Intent;
 import android.os.Bundle;
