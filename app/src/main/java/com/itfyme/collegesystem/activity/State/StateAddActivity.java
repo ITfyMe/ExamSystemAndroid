@@ -46,7 +46,9 @@ public class StateAddActivity extends BaseActivity {
             @Override
             public void onSuccess(Object data) {
                 Toast.makeText(StateAddActivity.this,"State added successfully",Toast.LENGTH_LONG).show();
-
+                Intent intent = new Intent();
+                setResult(AppCompatActivity.RESULT_OK, intent);
+                finish();
             }
 
             @Override
