@@ -18,7 +18,7 @@
             android:name=".activity.State.StateAddActivity">
         </activity>
         <activity
-            android:label="Add State"
+            android:label="State List"
             android:name=".activity.State.StateListActivity">
         </activity>
 
