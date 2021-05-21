@@ -25,9 +25,9 @@ public class StateAddActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_state_add);
-        edtTxtStateName = (EditText) findViewById(R.id.list);
-        edtTxtStateCode = (EditText) findViewById(R.id.list);
-        btnSubmit = (Button) findViewById(R.id.list);
+        edtTxtStateName = (EditText) findViewById(R.id.nameEdtTxt);
+        edtTxtStateCode = (EditText) findViewById(R.id.codeEdtTxt);
+        btnSubmit = (Button) findViewById(R.id.btnSubmit);
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

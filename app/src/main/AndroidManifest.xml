@@ -16,11 +16,15 @@
         <activity
             android:label="Add State"
             android:name=".activity.State.StateAddActivity">
-
         </activity>
         <activity
-            android:name=".activity.State.StateListActivity"
-            android:label="State">
+            android:label="Add State"
+            android:name=".activity.State.StateListActivity">
+        </activity>
+
+        <activity
+            android:name=".activity.DashboardActivity"
+            android:label="Dashboard">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
